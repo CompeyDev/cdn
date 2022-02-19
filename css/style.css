@@ -1,0 +1,193 @@
+@font-face {
+    font-family: "dafont";
+    src: url("https://www.devcomp.tk/resources/dafont/daft_font-webfont.eof");
+    src: url("https://www.devcomp.tk/resources/dafont/daft_font-webfont.woff") format("woff"),
+    url("https://www.devcomp.tk/resources/dafont/daft_font-webfont.otf") format("opentype"),
+    url("https://www.devcomp.tk/resources/dafont/daft_font-webfont.svg#filename") format("svg");
+    }
+
+:root {
+    --pink: #000000;
+    --pink-translucent: rgba(0, 0, 0, 0);
+    --white: #ffffff;
+    --black: #000000;
+    --shadow: -3px 6px 24px hsla(328.6, 41.2%, 10%, 0.4);
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color:black;
+    background-image: url("https://raw.githubusercontent.com/TheAwesomeCoder05/TheAwesomeCoder05.github.io/main/img/raw.jpg")
+  }
+  video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+ul {
+    margin-bottom: 2em;
+}
+
+li {
+    margin: 0.5em 0;
+}
+
+.small-text {
+    font-size: 1rem;
+}
+
+.overlay {
+    display: flex;
+    flex-direction: row;
+    background: var(--pink-translucent);
+    min-height: 100%;
+}
+
+
+.floating-card {
+    position: relative;
+    min-width: 30%;
+    padding: 2.5rem 4rem;
+    margin: 4rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+
+.floating-card.light {
+    color: var(--white);
+    background: var(--black);
+}
+
+.floating-card.light a {
+    text-decoration: none;
+    color: #2f3be0;
+}
+
+.floating-card.light a:hover {
+    text-decoration: underline;
+}
+
+.floating-card.info {
+    align-self: flex-end;
+}
+
+.overlay.center {
+    justify-content: center;
+}
+
+.floating-card.me {
+    align-self: center;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--pink);
+
+    width: 1em;
+    height: 1em;
+    display: block;
+
+    margin: 0.5em;
+}
+
+
+.links a:first-child {
+    margin-left: 0;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5em;
+}
+
+.links i {
+    height: 1em;
+    width: 1em;
+    text-align: center;
+}
+
+.links .social-icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    flex: 1;
+    margin-right: 0.25rem;
+}
+
+a .tooltip {
+    position: absolute;
+    font-size: 1rem;
+    line-height: 1em;
+    margin-left: 1em;
+    padding: 0.5em 0.75em;
+    font-weight: 900;
+    visibility: hidden;
+    border-radius: 3px;
+    z-index: 1;
+    background: var(--black);
+    color: var(--white);
+}
+
+a .tooltip::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -0.75em;
+    left: -1em;
+    border: solid 0.75em transparent;
+    border-right-color: var(--black);
+    z-index: 1;
+}
+
+a:hover .tooltip {
+    visibility: visible;
+}
+
+a .tooltip:hover {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 600px) {
+    .floating-card {
+        width: 100%;
+        align-self: center !important;
+        padding: 2rem 3rem;
+        margin: 1rem;
+    }
+
+    .links {
+        flex-direction: column;
+    }
+
+    .links a:first-child {
+        margin-left: 0.5em;
+    }
+
+    .links .social-icons {
+        margin-right: 0 !important;
+    }
+
+    .links > * {
+        display: flex;
+        justify-content: center;
+    }
+}
